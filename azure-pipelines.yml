@@ -1,4 +1,11 @@
 # Maven
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(build.sourcesdirectory)'
+    Contents: |
+      **/*.war
+      **/*.yml
+    TargetFolder: '$(build.artifactstagingdirectory)'
 - task: MavenAuthenticate@0
   inputs:
     artifactsFeeds: 'pduena'
